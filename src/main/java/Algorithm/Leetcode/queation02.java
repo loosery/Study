@@ -25,15 +25,18 @@ public class queation02 {
 
     }
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        //以l1为结果链表，将链表l2的值与链表l1本来的值的和重新赋值给链表l1，作为结果
         if(l1.next==null&&l2.next==null){
             l1.val=l1.val+l2.val;
-            if(l1.val>=10){
+            if(l1.val>=10){//判断两个链表值的和加起来是否大于10.因为到了尾节点，所以直接进1即新建
+                //值为1的链表
                 l1.next=new ListNode(1);
                 l1.val=l1.val-10;
             }
             return l1;
         }
-        if(l1.next==null){
+        if(l1.next==null){//如果两个链表长度不同，为防止出现空指针异常，需要给短链表延长，
+            //此处有改进的空间
             l1.next=new ListNode(0);
         }else if(l2.next==null){
             l2.next=new ListNode(0);
