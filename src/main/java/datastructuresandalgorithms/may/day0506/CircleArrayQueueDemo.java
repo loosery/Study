@@ -13,6 +13,7 @@ public class CircleArrayQueueDemo {
             System.out.println("2.从队列中获取数据");
             System.out.println("3.遍历查看队列");
             System.out.println("4.查看队列首位");
+            System.out.println("5.查看队列的长度");
             int choose=scanner.nextInt();
             switch (choose){
                 case 1:
@@ -45,6 +46,15 @@ public class CircleArrayQueueDemo {
                     }catch (Exception e){
                         System.out.println(e.getMessage());
                     }
+                    break;
+                case 5:
+                    try {
+                        int temp=circleArrayQueue.getSize();
+                        System.out.println(temp);
+                    }catch (Exception e){
+                        System.out.println(e.getMessage());
+                    }
+
                     break;
                 default:
                     flag=false;
@@ -112,6 +122,13 @@ public class CircleArrayQueueDemo {
                 throw new RuntimeException("队列为空");
             }
             System.out.printf("队列的头数据为"+arr[front]);
+        }
+        //计算队列的长度
+        public int getSize(){
+            if (isEmpty()){
+                throw new RuntimeException("队列为空");
+            }
+            return (rear+maxSize-front)%maxSize;
         }
 
     }
