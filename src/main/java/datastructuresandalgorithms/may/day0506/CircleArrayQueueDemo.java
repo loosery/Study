@@ -2,6 +2,9 @@ package datastructuresandalgorithms.may.day0506;
 
 import java.util.Scanner;
 
+/**
+ * @author yi
+ */
 public class CircleArrayQueueDemo {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
@@ -54,7 +57,6 @@ public class CircleArrayQueueDemo {
                     }catch (Exception e){
                         System.out.println(e.getMessage());
                     }
-
                     break;
                 default:
                     flag=false;
@@ -62,8 +64,6 @@ public class CircleArrayQueueDemo {
             }
         }
     }
-
-
     /**
      *  使用数组模拟队列
      */
