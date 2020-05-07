@@ -35,7 +35,7 @@ static class SingleLinkedList{
         public void printNode(){
             //判断节点是否未空
             if (head.next==null){
-                System.out.println("链表未空");
+                System.out.println("链表为空");
                 return;
             }
             HeroNode temp=head.next;
@@ -46,6 +46,33 @@ static class SingleLinkedList{
                 }
                 System.out.println(temp);
                 temp=temp.next;
+            }
+        }
+        public void addNodeByNo(HeroNode heroNode){
+            boolean flag=false;
+            HeroNode temp=head;
+            if (temp.next==null){
+                temp.next=heroNode;
+                return;
+            }
+            while (true){
+                if (temp.next==null){
+                    temp.next=heroNode;
+                    break;
+                }else if (temp.next.no>heroNode.no){
+                    break;
+                }else if (temp.next.no==heroNode.no){
+                    flag=true;
+                    break;
+                }else{
+                    temp=temp.next;
+                }
+            }
+            if (flag){
+                System.out.println("节点插入失败，链表中已存在该节点");
+            }else{
+                heroNode.next=temp.next;
+                temp.next=heroNode;
             }
         }
 
