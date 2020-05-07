@@ -7,10 +7,10 @@ public class SingleLinkedListDemo {
         HeroNode heroNode3=new HeroNode("林冲","豹子头",3);
         HeroNode heroNode4=new HeroNode("吴用","智多星",4);
         SingleLinkedList singleLinkedList=new SingleLinkedList();
-        singleLinkedList.addNode(heroNode1);
-        singleLinkedList.addNode(heroNode2);
-        singleLinkedList.addNode(heroNode3);
-        singleLinkedList.addNode(heroNode4);
+        singleLinkedList.addNodeByNo(heroNode1);
+        singleLinkedList.addNodeByNo(heroNode4);
+        singleLinkedList.addNodeByNo(heroNode3);
+        singleLinkedList.addNodeByNo(heroNode2);
         singleLinkedList.printNode();
 
     }
@@ -51,13 +51,8 @@ static class SingleLinkedList{
         public void addNodeByNo(HeroNode heroNode){
             boolean flag=false;
             HeroNode temp=head;
-            if (temp.next==null){
-                temp.next=heroNode;
-                return;
-            }
             while (true){
                 if (temp.next==null){
-                    temp.next=heroNode;
                     break;
                 }else if (temp.next.no>heroNode.no){
                     break;
