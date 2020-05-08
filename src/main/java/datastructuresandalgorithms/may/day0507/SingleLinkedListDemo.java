@@ -1,5 +1,8 @@
 package datastructuresandalgorithms.may.day0507;
 
+/**
+ * 单链表
+ */
 public class SingleLinkedListDemo {
     public static void main(String[] args) {
         HeroNode heroNode1=new HeroNode("宋江","及时雨",1);
